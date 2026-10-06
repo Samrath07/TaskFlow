@@ -1,0 +1,22 @@
+{
+    "15322344361040496861": {
+        "id": 15322344361040496861,
+        "type": "email",
+        "payload": {
+            "to": "user@example.com"
+        },
+        "status": "queued",
+        "created_at": 1791310239.3153105,
+        "user_id": null
+    },
+    "9456428768459966601": {
+        "id": 9456428768459966601,
+        "type": "email",
+        "payload": {
+            "to": "user@example.com"
+        },
+        "status": "queued",
+        "created_at": 1791310255.5201383,
+        "user_id": null
+    }
+}

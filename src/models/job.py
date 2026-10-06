@@ -1,9 +1,10 @@
 import time
 from typing import Any
 from schemas.job import JobStatus
+import uuid
 class Job:
     def __init__(self, type: str, payload: dict[str, Any]):
-        self.id = int(time.time() * 1000)
+        self.id = uuid.uuid4().int >> 64  # Generate a unique ID
         self.type = type
         self.payload = payload
         self.status = JobStatus.QUEUED
