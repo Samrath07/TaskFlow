@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from schemas.job import JobCreate, JobCreatedResponse,JobResponse
-from service.job import create_job, get_job
+from app.schemas.job import JobCreate, JobCreatedResponse,JobResponse
+from app.service.job import create_job, get_job
 
 app = FastAPI()
 

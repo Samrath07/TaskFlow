@@ -1,10 +1,10 @@
-from schemas.job import JobCreate,JobResponse
-from models.job import Job
+from app.schemas.job import JobCreate,JobResponse
+from app.models.job import Job
 from exceptions import JobNotFoundError
 import json
 from pathlib import Path
 from exceptions import JobAlreadyExistsError
-from schemas.job import JobCreatedResponse
+from app.schemas.job import JobCreatedResponse
 
 
 JOBS_FILE = Path("jobs.json")

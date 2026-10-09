@@ -1,11 +1,8 @@
 [project]
 name = "taskflow"
 version = "0.1.0"
-description = "Add your description here"
+description = "Taskflow backend"
 readme = "README.md"
-authors = [
-    { name = "Samrath07", email = "samrathprakash@gmail.com" }
-]
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.141.1",
@@ -15,9 +12,10 @@ dependencies = [
     "uvicorn[standard]>=0.52.4",
 ]
 
-[project.scripts]
-taskflow = "taskflow:main"
-
 [build-system]
 requires = ["uv_build>=0.12.10,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "app"
+module-root = "src"

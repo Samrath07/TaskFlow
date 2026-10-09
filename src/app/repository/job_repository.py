@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from models.job import Job
+from app.models.job import Job
 from exceptions import JobAlreadyExistsError
 
 
