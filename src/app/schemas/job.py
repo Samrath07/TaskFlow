@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from enum import Enum
 from typing import Any
+import uuid
+import datetime
 
 class JobCreate(BaseModel):
     type:str
@@ -15,11 +17,11 @@ class JobStatus(Enum):
 
 
 class JobResponse(BaseModel):
-    id: int
+    id: uuid.UUID
     type: str
     payload: dict[str, Any]
     status: JobStatus
-    created_at: float
+    created_at: datetime.datetime
     user_id: int | None = None
 
 class JobCreatedResponse(BaseModel):
