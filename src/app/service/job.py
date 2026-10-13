@@ -21,18 +21,13 @@ def create_job_service(job: JobCreate, db: Session = Depends(get_db)):
     except Exception as e:
         db.rollback()
         raise HTTPException(status_code=500, detail="Failed to create job") from e
-    
 
 
+def get_job_service(db: Session):
+    return db.query(Job).order_by(Job.created_at.desc()).all()
 
-# def get_job(job_id: int):
-#     if not JOBS_FILE.exists():
-#         raise JobNotFoundError(job_id)
-
-#     with open(JOBS_FILE, "r") as file:
-#         jobs = json.load(file)
-
-#     try:
-#         return jobs[str(job_id)]
-#     except KeyError:
-#         raise JobNotFoundError(job_id)
+def get_job_id_service(job_id: str, db: Session = Depends(get_db)):
+    job = db.query(Job).filter(Job.id == job_id).first()
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return job
